@@ -1,0 +1,9 @@
+[package]
+name = "bonfire-shell"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+command-fds = "0.3.0"
+memfd = "0.6.4"
+nix = { version = "0.29.0", features = ["process", "term"] }
