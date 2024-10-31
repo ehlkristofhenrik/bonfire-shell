@@ -67,6 +67,9 @@ fn main() -> Result<(), Box<dyn Error>> {
         .map(|s| CString::new(s).unwrap_or_default())
         .collect::<Vec<CString>>();
 
+
+    assert!( args().into_iter().filter(|x| x.starts_with("--init-file") ).collect::<Vec<String>>().len() == 0 );
+    
     // Set init file to memory file
     init_args.insert(1, CString::new("--init-file").unwrap_or_default());
     init_args.insert(
